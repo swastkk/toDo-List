@@ -5,18 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To do list</title>
-    <link rel="stylesheet" href="css/styles.css"> 
-    <!-- no use of "/" in front of css and no need to use the path as "public/css/styles.css" -->
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="box", id="heading">
-      <h1> <%= kindOfday %></h1>
+      <h1> <%= listTitle %></h1>
     </div>
-    <!-- <% if(kindOfday==="Saturday" || kindOfday=== "Sunday"){ %>
-    <h1 style="color: purple"><%= kindOfday %> </h1>
-    <% }else{ %>
-    <h1 style="color: blue"><%= kindOfday %> </h1>
-    <% } %> -->
+  
 <div class="box">
   <% for(var i=0; i<newItems.length; i++){  %>
     <div class="item">
@@ -26,14 +21,8 @@
     <% } %>
     <form action="/" class="item" method="post">
       <input type="text" name="newItem" placeholder="New Item"/ autocomplete="off">
-      <button type="submit">+</button>
+      <button type="submit" name="list" value="<%= listTitle%>">+</button>
+      <!-- button me name hota hai and a value option and when we assign a value  to the  button and then in bodyparse the value gets stored in the name variable -->
     </form>
-</div>
-    
-     
-
-   
-   
-    
-  </body>
-</html>
+  </div>
+<%- include("footer") -%>
